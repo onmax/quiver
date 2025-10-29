@@ -107,11 +107,55 @@ useSeoMeta({
 
     <USeparator :ui="{ border: 'border-primary/30' }" />
 
+    <UPageSection
+      id="steps"
+      :description="page.steps.description"
+      class="relative overflow-hidden"
+    >
+      <template #headline>
+        <NuxtImg
+          src="/images/light/line-3.svg"
+          class="absolute -top-10 sm:top-0 right-1/2 h-24"
+        />
+      </template>
+      <template #title>
+        <MDC :value="page.steps.title" />
+      </template>
+
+      <template #features>
+        <UPageCard
+          v-for="(step, index) in page.steps.items"
+          :key="index"
+          class="group"
+          :ui="{ container: 'p-4 sm:p-4', title: 'flex items-center gap-1' }"
+        >
+          <UColorModeImage
+            v-if="step.image"
+            :light="step.image?.light"
+            :dark="step.image?.dark"
+            :alt="step.title"
+            class="size-full"
+          />
+
+          <div class="flex flex-col gap-2">
+            <span class="text-lg font-semibold">
+              {{ step.title }}
+            </span>
+            <span class="text-sm text-muted">
+              {{ step.description }}
+            </span>
+          </div>
+        </UPageCard>
+      </template>
+    </UPageSection>
+
+    <USeparator :ui="{ border: 'border-primary/30' }" />
+
     <UPageSection id="feature-tabs" class="relative overflow-visible bg-muted/20" :ui="{ container: 'py-12 sm:py-16 lg:py-20 max-w-none' }">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-12">
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Everything you need for effective planning</h2>
-          <p class="text-lg text-muted max-w-2xl">Ditch the spreadsheets. Get a purpose-built platform that turns complex inventory planning into competitive advantage.</p>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Everything you need to plan with confidence</h2>
+          <p class="text-lg text-muted max-w-2xl">Purpose-built workflows replace spreadsheets so your team makes faster, smarter inventory decisions.</p>
         </div>
 
         <div class="grid lg:grid-cols-[450px_1fr] gap-8 items-start">
@@ -170,66 +214,27 @@ useSeoMeta({
     <USeparator :ui="{ border: 'border-primary/30' }" />
 
     <UPageSection
-      v-if="page.about"
-      id="about"
-      class="relative overflow-hidden"
+      v-if="page.platform_logos"
+      id="integrations"
+      class="bg-muted/20"
       :ui="{ container: 'py-12 sm:py-16 lg:py-20' }"
     >
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-          <MDC :value="page.about.title" unwrap="p" />
+      <div class="text-center mb-10 max-w-3xl mx-auto space-y-3">
+        <h2 class="text-3xl sm:text-4xl font-bold">
+          <MDC :value="page.platform_logos.title" unwrap="span" />
         </h2>
-        <p class="text-lg text-muted max-w-4xl mx-auto">{{ page.about.description }}</p>
+        <p v-if="page.platform_logos.description" class="text-lg text-muted">{{ page.platform_logos.description }}</p>
       </div>
 
-      <div class="max-w-4xl mx-auto mt-16">
-        <h3 class="text-2xl sm:text-3xl font-bold mb-6">Who we are</h3>
-        <p class="text-lg text-muted leading-relaxed">{{ page.about.content }}</p>
-      </div>
-    </UPageSection>
-
-    <USeparator :ui="{ border: 'border-primary/30' }" />
-
-    <UPageSection
-      id="steps"
-      :description="page.steps.description"
-      class="relative overflow-hidden"
-    >
-      <template #headline>
+      <UMarquee pause-on-hover :ui="{ root: '[--duration:30s]' }">
         <NuxtImg
-          src="/images/light/line-3.svg"
-          class="absolute -top-10 sm:top-0 right-1/2 h-24"
-        />
-      </template>
-      <template #title>
-        <MDC :value="page.steps.title" />
-      </template>
-
-      <template #features>
-        <UPageCard
-          v-for="(step, index) in page.steps.items"
+          v-for="(logo, index) in page.platform_logos.logos"
           :key="index"
-          class="group"
-          :ui="{ container: 'p-4 sm:p-4', title: 'flex items-center gap-1' }"
-        >
-          <UColorModeImage
-            v-if="step.image"
-            :light="step.image?.light"
-            :dark="step.image?.dark"
-            :alt="step.title"
-            class="size-full"
-          />
-
-          <div class="flex flex-col gap-2">
-            <span class="text-lg font-semibold">
-              {{ step.title }}
-            </span>
-            <span class="text-sm text-muted">
-              {{ step.description }}
-            </span>
-          </div>
-        </UPageCard>
-      </template>
+          :src="logo.src"
+          :alt="logo.alt"
+          class="h-12 max-w-48 w-auto shrink-0 object-contain"
+        />
+      </UMarquee>
     </UPageSection>
 
     <USeparator :ui="{ border: 'border-primary/30' }" />
@@ -268,6 +273,52 @@ useSeoMeta({
           </UPageCard>
         </UPageColumns>
       </UContainer>
+    </UPageSection>
+
+    <USeparator :ui="{ border: 'border-primary/30' }" />
+
+    <UPageCTA
+      v-bind="page.cta"
+      variant="naked"
+      class="overflow-hidden @container"
+    >
+      <template #title>
+        <MDC :value="page.cta.title" />
+
+        <div class="@max-[1280px]:hidden">
+          <NuxtImg
+            src="/images/light/line-6.svg"
+            class="absolute left-10 -top-10 sm:top-0 h-full"
+          />
+          <NuxtImg
+            src="/images/light/line-7.svg"
+            class="absolute right-0 bottom-0 h-full"
+          />
+        </div>
+      </template>
+
+      <LazyStarsBg />
+    </UPageCTA>
+
+    <USeparator :ui="{ border: 'border-primary/30' }" />
+
+    <UPageSection
+      v-if="page.about"
+      id="about"
+      class="relative overflow-hidden"
+      :ui="{ container: 'py-12 sm:py-16 lg:py-20' }"
+    >
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          <MDC :value="page.about.title" unwrap="p" />
+        </h2>
+        <p class="text-lg text-muted max-w-4xl mx-auto">{{ page.about.description }}</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto mt-16">
+        <h3 class="text-2xl sm:text-3xl font-bold mb-6">Who we are</h3>
+        <p class="text-lg text-muted leading-relaxed">{{ page.about.content }}</p>
+      </div>
     </UPageSection>
 
     <USeparator :ui="{ border: 'border-primary/30' }" />
@@ -330,47 +381,5 @@ useSeoMeta({
         </UPageCard>
       </UPageGrid>
     </UPageSection>
-
-    <USeparator />
-
-    <UPageSection v-if="page.platform_logos" class="bg-background" :ui="{ container: 'py-12' }">
-      <div class="text-center mb-8">
-        <h3 class="text-2xl font-bold">Integrations</h3>
-      </div>
-      <UMarquee pause-on-hover :ui="{ root: '[--duration:30s]' }">
-        <NuxtImg
-          v-for="(logo, index) in page.platform_logos.logos"
-          :key="index"
-          :src="logo.src"
-          :alt="logo.alt"
-          class="h-12 max-w-48 w-auto shrink-0 object-contain"
-        />
-      </UMarquee>
-    </UPageSection>
-
-    <USeparator />
-
-    <UPageCTA
-      v-bind="page.cta"
-      variant="naked"
-      class="overflow-hidden @container"
-    >
-      <template #title>
-        <MDC :value="page.cta.title" />
-
-        <div class="@max-[1280px]:hidden">
-          <NuxtImg
-            src="/images/light/line-6.svg"
-            class="absolute left-10 -top-10 sm:top-0 h-full"
-          />
-          <NuxtImg
-            src="/images/light/line-7.svg"
-            class="absolute right-0 bottom-0 h-full"
-          />
-        </div>
-      </template>
-
-      <LazyStarsBg />
-    </UPageCTA>
   </div>
 </template>

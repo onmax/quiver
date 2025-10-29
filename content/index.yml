@@ -46,6 +46,8 @@ integrations:
     - src: /logos/wuniversity.svg
       alt: W University
 platform_logos:
+  title: Works with the systems you already use
+  description: Connect Quiver to your ERP, ecommerce platforms, and marketplaces in minutes.
   logos:
     - src: /landing/logos/logo-uniconta.svg
       alt: Uniconta
@@ -99,21 +101,21 @@ section:
       description: Unified view across all sales channels, warehouses, and product categories.
       class: border-l border-default pt-4 pl-4
 features:
-  title: Turn chaos into [control]{.text-primary}
-  description: Stop firefighting stock issues. Get the inventory intelligence you need to stay ahead.
+  title: Run [proactive]{.text-primary} planning across every channel
+  description: Replace firefighting with clear visibility, confident decisions, and aligned teams.
   features:
-    - title: Eliminate stock-outs
-      description: AI forecasting predicts demand before you run out. Keep shelves stocked and customers happy.
+    - title: Eliminate stockouts
+      description: AI forecasting predicts demand before you run low so shelves stay stocked and customers stay loyal.
       icon: i-ph-shield-check-duotone
       ui:
         leading: bg-accented/50 p-2 rounded-md border border-muted border-dashed
     - title: Optimize inventory levels
-      description: Balance stock automatically with smart policies. Reduce excess inventory by 10-30% without risk.
+      description: Balance stock automatically with smart policies and shrink excess inventory without adding risk.
       icon: i-ph-scales-duotone
       ui:
         leading: bg-accented/50 p-2 rounded-md border border-muted border-dashed
     - title: Save hours every week
-      description: Ditch the spreadsheets. Automate planning tasks and eliminate manual errors for good.
+      description: Automate repetitive planning tasks so planners reclaim hours every week.
       icon: i-ph-rocket-launch-duotone
       ui:
         leading: bg-accented/50 p-2 rounded-md border border-muted border-dashed
@@ -128,30 +130,30 @@ features:
       ui:
         leading: bg-accented/50 p-2 rounded-md border border-muted border-dashed
     - title: React instantly to changes
-      description: Real-time integrations feed demand signals as they happen. Adapt before competitors do.
+      description: Real-time integrations surface demand shifts immediately so you can adapt before competitors.
       icon: i-ph-lightning-duotone
       ui:
         leading: bg-accented/50 p-2 rounded-md border border-muted border-dashed
 about:
   title: Supply chain planning should be [easy]{.text-primary}
-  description: We help companies take control of their inventory with smart forecasting and automated planning. No more spreadsheets, gut feelings, or costly mistakes.
-  content: Many businesses still rely on manual processes to manage inventory — leading to overordering, stockouts, and wasted time. Quiver is a simple SaaS platform that makes forecasting and inventory management easier. We take the guesswork out of supply chain decisions, so you keep the right products in stock without tying up too much cash.
+  description: We help product companies replace reactive spreadsheets with smart forecasting and automated planning. No more gut feel decisions or costly surprises.
+  content: Many businesses still rely on manual processes to manage inventory—leading to overordering, stockouts, and lost hours. Quiver delivers a purpose-built platform that makes forecasting and inventory management straightforward. We take the guesswork out of supply chain decisions so you keep the right products in stock without tying up cash.
 steps:
   title: How [Quiver]{.text-primary} works
-  description: From chaos to control in three powerful steps.
+  description: Go live with AI-driven inventory planning in three focused steps.
   items:
     - title: Connect your systems
-      description: Integrate with your ERP, e-commerce platforms, and data sources in minutes. Start feeding real-time data into Quiver instantly.
+      description: Integrate ERPs, ecommerce, and data sources in minutes to stream real-time signals into Quiver.
       image:
         light: '/images/light/connect.svg'
         dark: '/images/dark/connect.svg'
     - title: Get AI-powered forecasts
-      description: Advanced models analyze your sales patterns, seasonality, and trends to predict future demand with precision.
+      description: Advanced models digest sales patterns, seasonality, and trends to project demand with precision.
       image:
         light: '/images/light/optimize.svg'
         dark: '/images/dark/optimize.svg'
     - title: Optimize & order smarter
-      description: Receive automated order suggestions that balance stock levels, reduce waste, and prevent stock-outs.
+      description: Receive automated order suggestions that balance stock levels, reduce waste, and prevent stockouts.
       image:
         light: '/images/light/track.svg'
         dark: '/images/dark/track.svg'
@@ -160,71 +162,71 @@ testimonials:
   title: Trusted by leading [businesses]{.text-primary}
   description: See how companies are transforming their inventory planning and achieving better results with our platform.
   items:
-    - quote: Quiver has helped us automate and professionalize inventory planning – creating great overview and minimizing risks of manual mistakes
+    - quote: Quiver has helped us automate and professionalize inventory planning—giving us a clear overview and minimizing the risk of manual mistakes.
       user:
         name: 'Frida Vestergaard'
         description: 'Supply Chain Manager - Moonboon'
         avatar:
           src: '/landing/testimonials/frida-vestergaard.jpg'
-    - quote: The platform is so intuitive! Quiver has streamlined our planning, saving valuable time and reducing costly manual errors. We've reduced stock-outs and overstock situations
+    - quote: The platform is intuitive. Quiver streamlined our planning, saved valuable time, and reduced costly manual errors. We've cut stockouts and overstock situations.
       user:
         name: 'Jacob Vesterled'
         description: 'COO - Moonboon'
         avatar:
           src: '/landing/testimonials/jacob-vesterled.jpg'
-    - quote: It's has been a pleasure to work with Quiver. They are super professional and dedicated to deliver a product that solves my planning challenges.
+    - quote: It's been a pleasure working with Quiver. They are professional and dedicated to delivering a product that solves our planning challenges.
       user:
         name: 'Stinne Frøslev'
         description: 'Head of Operations - Sif Jakobs'
         avatar:
           src: '/landing/testimonials/stinne-froslev.jpg'
-    - quote: With Quiver, we have secured a consolidated overview of our supply chain, from purchasing to sales, including input for forecasting
+    - quote: With Quiver we now have a consolidated overview of our supply chain, from purchasing to sales, including the inputs we need for forecasting.
       user:
         name: 'Marianne Iversen'
-        description: 'CFO - Contour design'
+        description: 'CFO - Contour Design'
         avatar:
           src: '/landing/testimonials/marianne-iversen.jpg'
-    - quote: Quiver has helped us improve Re-order points and safety stock levels which drives a more healthy inventory
+    - quote: Quiver helped us improve reorder points and safety stock levels, creating healthier inventory.
       user:
         name: 'Robin Villadsen'
         description: 'Production Manager - BIBS'
         avatar:
           src: '/landing/testimonials/robin-villadsen.png'
-    - quote: Quiver has been a wonderful tool in our inventory planning process. The options to add customization, rules, or special planning requirements for product lines is a huge help
+    - quote: Quiver has been essential in our inventory planning. The ability to add custom rules or special requirements for product lines is a huge help.
       user:
         name: 'Sadie Hardiman'
-        description: 'US Planning manager - Contour design'
+        description: 'US Planning Manager - Contour Design'
 team:
   title: Meet the [team]{.text-primary}
   description: The people behind Quiver, dedicated to transforming supply chain planning.
   members:
     - name: Morten Sønderlyng
       role: Co-Founder & CEO
-      bio: Ex. Implement Consulting Group. Consulted +30 companies within supply chain planning excellence from various industries.
+      bio: Former Implement Consulting Group consultant who has led 30+ supply chain planning transformations across industries.
       image: /landing/team/moso.jpg
       linkedin: https://linkedin.com/in/mortensoenderlyng/
     - name: Christoffer Samuel Nielsen
       role: Co-Founder & CTO
-      bio: Ex. Principal from Netcompany. +7 years of experience in designing, building and operating software solutions. Specialty in AI/ Machine learning.
+      bio: Former Netcompany principal with 7+ years designing, building, and operating software solutions, specialized in AI and machine learning.
       image: /landing/team/csn.jpg
       linkedin: https://linkedin.com/in/christoffer-samuel-nielsen-6a11992a/
     - name: Alexander Husted
       role: Data Scientist
-      bio: Data scientist with focus on building data integrations to various ERP systems. Reponsible for data quality and tests.
+      bio: Data scientist focused on building integrations to leading ERP systems and owning data quality and testing.
       image: /landing/team/ah.jpg
       linkedin: https://linkedin.com/in/alexander-husted-562a37191/
     - name: Kira Bastian
       role: Business Development Associate
-      bio: Commercial-mind with focus on establishing and building client relationsships, branding and communication.
+      bio: Commercial-minded builder focused on client relationships, branding, and communication.
       image: /landing/team/kb.jpg
       linkedin: https://linkedin.com/in/kira-bastian-24936b131/
     - name: Gergő Greiner
       role: Software engineer
-      bio: Front-end developer with speciality in Typescript and functional programming. Dedicated to making our user experience smooth.
+      bio: Front-end developer specialized in TypeScript and functional programming, dedicated to a smooth user experience.
       linkedin: https://linkedin.com/in/gergő-greiner-08690732b/
     - name: Ce Hjort-Trærup
       role: Software engineer
-      bio: Back-end developer with speciality in Python. Experience from supply chain start-ups and building inventory management systems from scratch.
+      bio: Back-end developer specialized in Python with experience from supply chain startups and building inventory management systems from scratch.
       linkedin: https://linkedin.com/in/cetraerup/
 investors:
   title: Backed by a strong [investor group]{.text-primary}
@@ -232,32 +234,32 @@ investors:
   members:
     - name: Michael Overgaard
       role: Chairman of the board
-      bio: Investor and Quiver's Chairman board. Former founder of ConSet A/S with exit in 2021 with experience from wholesale and manufacturing
+      bio: Investor and Chair of Quiver's board. Founded ConSet A/S and exited in 2021, bringing deep wholesale and manufacturing experience.
       image: /landing/investors/michael-overgaard.jpg
       linkedin: https://linkedin.com/in/michael-lindal-overgaard-2b00833/
     - name: Thomas Boel Sigurdsson
       role: Board member
-      bio: Technology Entrepreneur & Co-founder of Omada. More than 20 years of experience as a software architect and developer
+      bio: Technology entrepreneur and co-founder of Omada with 20+ years as a software architect and developer.
       image: /landing/investors/thomas-boel-sigurdsson.jpg
       linkedin: https://linkedin.com/in/thomas-boel-sigurdsson/
     - name: Maria Sundlöf
       role: Investor
-      bio: Serial investor with more than 30 years of experience from the IT industry. Advisor and board member especially with focus on business development and the efficient use of systems and new technology.
+      bio: Serial investor with 30+ years in the IT industry, advising on business development and the effective use of new technology.
       image: /landing/investors/maria-sundlof.jpg
       linkedin: https://linkedin.com/in/marias3/
     - name: Nicolai Præstholm
       role: Investor
-      bio: Sr. Partner at Implement Consulting Group with deep experience from supply chain planning transformation projects
+      bio: Senior partner at Implement Consulting Group with deep experience driving supply chain planning transformations.
       image: /landing/investors/nicolai-praestholm.jpg
       linkedin: https://linkedin.com/in/nicolaipraestholm/
     - name: Oliver Rye
       role: Investor
-      bio: Serial investor in Nordic early-stage startups with focus on SaaS.
+      bio: Serial investor in Nordic early-stage SaaS startups.
       image: /landing/investors/oliver-rye.jpg
       linkedin: https://linkedin.com/in/oliver-rye-a222685/
 cta:
   title: Ready to transform your inventory planning?
-  description: Join hundreds of businesses using Quiver to optimize inventory and boost profitability. Start with a free demo today.
+  description: Join leading retail and wholesale teams using Quiver to optimize inventory, boost profitability, and plan with confidence.
   links:
     - label: Book a demo
       to: 'https://cal.com/quiver-dk/demo-meeting'
