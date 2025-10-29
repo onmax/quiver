@@ -207,10 +207,9 @@ useSeoMeta({
           class="group"
           :ui="{ container: 'p-4 sm:p-4', title: 'flex items-center gap-1' }"
         >
-          <UColorModeImage
-            v-if="step.image"
-            :light="step.image?.light"
-            :dark="step.image?.dark"
+          <NuxtImg
+            v-if="step.image?.light"
+            :src="step.image.light"
             :alt="step.title"
             class="size-full"
           />
