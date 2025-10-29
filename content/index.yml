@@ -84,6 +84,22 @@ benefits:
         - Lower carrying costs by minimizing overstock and scrap.
         - Automate planning to save hours every single week.
         - Eliminate manual errors that trigger rush fees.
+hero_features:
+  title: '[AI-powered]{.text-primary} demand forecasting'
+  description: Stop guessing what to order. Get precise predictions based on your unique sales patterns, seasonality, and market trends.
+  images:
+    mobile: '/images/macbook-mobile.svg'
+    desktop: '/images/macbook.svg'
+  features:
+    - title: Predict future demand
+      description: Advanced ML models analyze historical data to forecast demand with unprecedented accuracy.
+      class: border-l border-primary pl-4
+    - title: Adapt to seasonality
+      description: Automatically detect and adjust for seasonal patterns, promotions, and market shifts.
+      class: border-l border-default pt-4 pl-4
+    - title: Multi-channel insights
+      description: Unified view across all sales channels, warehouses, and product categories.
+      class: border-l border-default pt-4 pl-4
 features:
   title: Run [proactive]{.text-primary} planning across every channel
   description: Replace firefighting with clear visibility, confident decisions, and aligned teams.

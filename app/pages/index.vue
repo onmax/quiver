@@ -153,6 +153,38 @@ useSeoMeta({
     <USeparator :ui="{ border: 'border-primary/30' }" />
 
     <UPageSection
+      v-if="page.hero_features"
+      id="hero-features"
+      :title="page.hero_features.title"
+      :description="page.hero_features.description"
+    >
+      <template #title>
+        <MDC :value="page.hero_features.title" />
+      </template>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="space-y-6">
+          <UPageCard
+            v-for="(feature, index) in page.hero_features.features"
+            :key="index"
+            :title="feature.title"
+            :description="feature.description"
+            :ui="{ root: feature.class || '' }"
+          />
+        </div>
+        <div v-if="page.hero_features.images">
+          <NuxtImg
+            :src="page.hero_features.images.desktop || page.hero_features.images.mobile"
+            alt="Platform preview"
+            class="w-full"
+          />
+        </div>
+      </div>
+    </UPageSection>
+
+    <USeparator :ui="{ border: 'border-primary/30' }" />
+
+    <UPageSection
       v-if="page.steps"
       id="steps"
       :description="page.steps.description"

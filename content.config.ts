@@ -54,6 +54,18 @@ const landingSchema = z.object({
       items: z.array(z.string())
     }))
   }).optional(),
+  hero_features: createBaseSchema().extend({
+    images: z.object({
+      mobile: z.string().optional(),
+      desktop: z.string().optional()
+    }).optional(),
+    features: z.array(
+      createBaseSchema().extend({
+        icon: z.string().editor({ input: 'icon' }).optional(),
+        class: z.string().optional()
+      })
+    )
+  }).optional(),
   features: createBaseSchema().extend({
     features: z.array(createFeatureSchema())
   }),
