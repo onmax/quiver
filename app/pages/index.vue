@@ -55,17 +55,45 @@ useSeoMeta({
 
       <template #body>
         <div class="flex flex-wrap gap-x-6 gap-y-3">
-          <UButton v-for="(link, index) in page.hero.links" :key="index" v-bind="link" />
+          <UButton
+            v-for="(link, index) in page.hero.links"
+            :key="index"
+            v-bind="link"
+          />
         </div>
 
-        <div v-if="page.integrations" class="mt-10">
-          <p class="text-sm text-muted mb-4">Trusted by</p>
+        <div
+          v-if="page.integrations"
+          class="mt-10"
+        >
+          <p class="text-sm text-muted mb-4">
+            Trusted by
+          </p>
           <div class="space-y-4">
-            <UMarquee pause-on-hover :ui="{ root: '[--duration:40s] before:w-[10%] after:w-[10%]' }">
-              <NuxtImg v-for="(logo, index) in page.integrations.logos.slice(0, 7)" :key="index" :src="logo.src" :alt="logo.alt" class="h-8 max-w-24 w-auto shrink-0 object-contain" />
+            <UMarquee
+              pause-on-hover
+              :ui="{ root: '[--duration:40s] before:w-[10%] after:w-[10%]' }"
+            >
+              <NuxtImg
+                v-for="(logo, index) in page.integrations.logos.slice(0, 7)"
+                :key="index"
+                :src="logo.src"
+                :alt="logo.alt"
+                class="h-8 max-w-24 w-auto shrink-0 object-contain"
+              />
             </UMarquee>
-            <UMarquee reverse pause-on-hover :ui="{ root: '[--duration:40s] before:w-[10%] after:w-[10%]' }">
-              <NuxtImg v-for="(logo, index) in page.integrations.logos.slice(7)" :key="index" :src="logo.src" :alt="logo.alt" class="h-8 max-w-24 w-auto shrink-0 object-contain" />
+            <UMarquee
+              reverse
+              pause-on-hover
+              :ui="{ root: '[--duration:40s] before:w-[10%] after:w-[10%]' }"
+            >
+              <NuxtImg
+                v-for="(logo, index) in page.integrations.logos.slice(7)"
+                :key="index"
+                :src="logo.src"
+                :alt="logo.alt"
+                class="h-8 max-w-24 w-auto shrink-0 object-contain"
+              />
             </UMarquee>
           </div>
         </div>
@@ -78,7 +106,10 @@ useSeoMeta({
       />
     </UPageHero>
 
-    <UPageSection v-if="page.benefits" :ui="{ container: 'py-12 sm:py-16 lg:py-20' }">
+    <UPageSection
+      v-if="page.benefits"
+      :ui="{ container: 'py-12 sm:py-16 lg:py-20' }"
+    >
       <UPageGrid>
         <UPageCard
           v-for="(card, index) in page.benefits.cards"
@@ -88,14 +119,28 @@ useSeoMeta({
         >
           <div class="grid grid-cols-[4rem_1fr] gap-x-4 gap-y-0.5">
             <div class="row-span-2 size-16 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-              <UIcon :name="card.icon" class="size-8 text-primary" />
+              <UIcon
+                :name="card.icon"
+                class="size-8 text-primary"
+              />
             </div>
-            <div class="text-3xl font-bold text-primary">{{ card.percentage }}</div>
-            <div class="text-xl font-bold">{{ card.title }}</div>
+            <div class="text-3xl font-bold text-primary">
+              {{ card.percentage }}
+            </div>
+            <div class="text-xl font-bold">
+              {{ card.title }}
+            </div>
             <div class="col-span-2 mt-4">
               <ul class="space-y-2 text-muted text-sm">
-                <li v-for="(item, i) in card.items" :key="i" class="flex items-start gap-2">
-                  <UIcon name="i-ph-check-circle-duotone" class="text-primary shrink-0 size-4 mt-0.5" />
+                <li
+                  v-for="(item, i) in card.items"
+                  :key="i"
+                  class="flex items-start gap-2"
+                >
+                  <UIcon
+                    name="i-ph-check-circle-duotone"
+                    class="text-primary shrink-0 size-4 mt-0.5"
+                  />
                   <span>{{ item }}</span>
                 </li>
               </ul>
@@ -152,11 +197,19 @@ useSeoMeta({
 
     <USeparator :ui="{ border: 'border-primary/30' }" />
 
-    <UPageSection id="feature-tabs" class="relative overflow-visible bg-muted/20" :ui="{ container: 'py-12 sm:py-16 lg:py-20 max-w-none' }">
+    <UPageSection
+      id="feature-tabs"
+      class="relative overflow-visible bg-muted/20"
+      :ui="{ container: 'py-12 sm:py-16 lg:py-20 max-w-none' }"
+    >
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-12">
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Everything you need to plan with confidence</h2>
-          <p class="text-lg text-muted max-w-2xl">Purpose-built workflows replace spreadsheets so your team makes faster, smarter inventory decisions.</p>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            Everything you need to plan with confidence
+          </h2>
+          <p class="text-lg text-muted max-w-2xl">
+            Purpose-built workflows replace spreadsheets so your team makes faster, smarter inventory decisions.
+          </p>
         </div>
 
         <div class="grid lg:grid-cols-[450px_1fr] gap-8 items-start">
@@ -164,11 +217,11 @@ useSeoMeta({
             <button
               v-for="tab in featureTabs"
               :key="tab.value"
-              @click="selectedTab = tab.value"
               :class="[
                 'w-full text-left px-6 py-4 rounded-lg transition-colors',
                 selectedTab === tab.value ? 'bg-primary/10 text-primary' : 'hover:bg-muted/50'
               ]"
+              @click="selectedTab = tab.value"
             >
               <div class="flex flex-col gap-1">
                 <span class="font-semibold">{{ tab.label }}</span>
@@ -178,7 +231,11 @@ useSeoMeta({
           </div>
 
           <div class="relative -mr-4 sm:-mr-6 lg:-mr-8 overflow-visible">
-            <NuxtImg :src="currentImage" alt="Feature preview" class="w-full transition-opacity duration-300 rounded-l-lg shadow-2xl" />
+            <NuxtImg
+              :src="currentImage"
+              alt="Feature preview"
+              class="w-full transition-opacity duration-300 rounded-l-lg shadow-2xl"
+            />
           </div>
         </div>
       </div>
@@ -223,12 +280,23 @@ useSeoMeta({
     >
       <div class="text-center mb-10 max-w-3xl mx-auto space-y-3">
         <h2 class="text-3xl sm:text-4xl font-bold">
-          <MDC :value="page.platform_logos.title" unwrap="span" />
+          <MDC
+            :value="page.platform_logos.title"
+            unwrap="span"
+          />
         </h2>
-        <p v-if="page.platform_logos.description" class="text-lg text-muted">{{ page.platform_logos.description }}</p>
+        <p
+          v-if="page.platform_logos.description"
+          class="text-lg text-muted"
+        >
+          {{ page.platform_logos.description }}
+        </p>
       </div>
 
-      <UMarquee pause-on-hover :ui="{ root: '[--duration:30s]' }">
+      <UMarquee
+        pause-on-hover
+        :ui="{ root: '[--duration:30s]' }"
+      >
         <NuxtImg
           v-for="(logo, index) in page.platform_logos.logos"
           :key="index"
@@ -313,14 +381,23 @@ useSeoMeta({
     >
       <div class="text-center mb-12">
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-          <MDC :value="page.about.title" unwrap="p" />
+          <MDC
+            :value="page.about.title"
+            unwrap="p"
+          />
         </h2>
-        <p class="text-lg text-muted max-w-4xl mx-auto">{{ page.about.description }}</p>
+        <p class="text-lg text-muted max-w-4xl mx-auto">
+          {{ page.about.description }}
+        </p>
       </div>
 
       <div class="max-w-4xl mx-auto mt-16">
-        <h3 class="text-2xl sm:text-3xl font-bold mb-6">Who we are</h3>
-        <p class="text-lg text-muted leading-relaxed">{{ page.about.content }}</p>
+        <h3 class="text-2xl sm:text-3xl font-bold mb-6">
+          Who we are
+        </h3>
+        <p class="text-lg text-muted leading-relaxed">
+          {{ page.about.content }}
+        </p>
       </div>
     </UPageSection>
 
@@ -337,23 +414,48 @@ useSeoMeta({
       </template>
 
       <UPageGrid class="lg:grid-cols-3">
-        <UPageCard v-for="(member, index) in page.team.members" :key="index">
+        <UPageCard
+          v-for="(member, index) in page.team.members"
+          :key="index"
+        >
           <template #header>
-            <NuxtImg v-if="member.image" :src="member.image" :alt="member.name" class="size-16 rounded-full object-cover outline-2 -outline-offset-2 outline-white/20" />
-            <div v-else class="size-16 rounded-full outline-2 -outline-offset-2 outline-white/20" />
+            <NuxtImg
+              v-if="member.image"
+              :src="member.image"
+              :alt="member.name"
+              class="size-16 rounded-full object-cover outline-2 -outline-offset-2 outline-white/20"
+            />
+            <div
+              v-else
+              class="size-16 rounded-full outline-2 -outline-offset-2 outline-white/20"
+            />
           </template>
 
           <template #title>
-            <p class="text-sm text-muted">{{ member.role }}</p>
-            <h3 class="text-lg font-semibold">{{ member.name }}</h3>
+            <p class="text-sm text-muted">
+              {{ member.role }}
+            </p>
+            <h3 class="text-lg font-semibold">
+              {{ member.name }}
+            </h3>
           </template>
 
           <template #description>
-            <p class="text-sm text-muted">{{ member.bio }}</p>
+            <p class="text-sm text-muted">
+              {{ member.bio }}
+            </p>
           </template>
 
           <template #footer>
-            <UButton v-if="member.linkedin" :to="member.linkedin" target="_blank" variant="link" color="neutral" icon="i-simple-icons-linkedin" aria-label="LinkedIn" />
+            <UButton
+              v-if="member.linkedin"
+              :to="member.linkedin"
+              target="_blank"
+              variant="link"
+              color="neutral"
+              icon="i-simple-icons-linkedin"
+              aria-label="LinkedIn"
+            />
           </template>
         </UPageCard>
       </UPageGrid>
@@ -372,22 +474,43 @@ useSeoMeta({
       </template>
 
       <UPageGrid class="lg:grid-cols-5">
-        <UPageCard v-for="(member, index) in page.investors.members" :key="index">
+        <UPageCard
+          v-for="(member, index) in page.investors.members"
+          :key="index"
+        >
           <template #header>
-            <NuxtImg :src="member.image" :alt="member.name" class="size-16 rounded-full object-cover outline-2 -outline-offset-2 outline-white/20" />
+            <NuxtImg
+              :src="member.image"
+              :alt="member.name"
+              class="size-16 rounded-full object-cover outline-2 -outline-offset-2 outline-white/20"
+            />
           </template>
 
           <template #title>
-            <p class="text-sm text-muted">{{ member.role }}</p>
-            <h3 class="text-lg font-semibold">{{ member.name }}</h3>
+            <p class="text-sm text-muted">
+              {{ member.role }}
+            </p>
+            <h3 class="text-lg font-semibold">
+              {{ member.name }}
+            </h3>
           </template>
 
           <template #description>
-            <p class="text-sm text-muted">{{ member.bio }}</p>
+            <p class="text-sm text-muted">
+              {{ member.bio }}
+            </p>
           </template>
 
           <template #footer>
-            <UButton v-if="member.linkedin" :to="member.linkedin" target="_blank" variant="link" color="neutral" icon="i-simple-icons-linkedin" aria-label="LinkedIn" />
+            <UButton
+              v-if="member.linkedin"
+              :to="member.linkedin"
+              target="_blank"
+              variant="link"
+              color="neutral"
+              icon="i-simple-icons-linkedin"
+              aria-label="LinkedIn"
+            />
           </template>
         </UPageCard>
       </UPageGrid>
