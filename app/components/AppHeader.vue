@@ -31,8 +31,6 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
       <NuxtLink to="/">
         <AppLogo class="w-auto h-6 shrink-0" />
       </NuxtLink>
-
-      <TemplateMenu />
     </template>
 
     <template #right>
@@ -43,12 +41,10 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
       />
 
       <UButton
-        label="Download App"
+        label="Book a call"
         variant="subtle"
         class="hidden lg:block"
       />
-
-      <UColorModeButton />
     </template>
 
     <template #body>
@@ -59,7 +55,7 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
       />
       <UButton
         class="mt-4"
-        label="Download App"
+        label="Book a call"
         variant="subtle"
         block
       />
