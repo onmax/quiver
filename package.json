@@ -8,6 +8,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
@@ -20,8 +21,12 @@
     "nuxt": "^4.2.0"
   },
   "devDependencies": {
+    "@iconify-json/ph": "^1.2.2",
     "@nuxt/eslint": "^1.9.0",
     "eslint": "^9.38.0",
+    "js-yaml": "^4.1.0",
+    "sharp-cli": "^5.2.0",
+    "svgo": "^4.0.0",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.1.2"
   },
