@@ -65,7 +65,7 @@ const landingSchema = z.object({
             class: z.string().optional()
           })
         )
-      }),
+      }).optional(),
       features: createBaseSchema().extend({
         features: z.array(createFeatureSchema())
       }),
