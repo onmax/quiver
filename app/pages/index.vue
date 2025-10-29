@@ -54,7 +54,7 @@ useSeoMeta({
       </template>
 
       <template #body>
-        <div class="flex flex-wrap gap-x-6 gap-y-3">
+        <div v-if="page.hero?.links" class="flex flex-wrap gap-x-6 gap-y-3">
           <UButton
             v-for="(link, index) in page.hero.links"
             :key="index"
