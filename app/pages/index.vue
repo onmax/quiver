@@ -108,6 +108,7 @@ useSeoMeta({
     <USeparator :ui="{ border: 'border-primary/30' }" />
 
     <UPageSection
+      v-if="page.steps"
       id="steps"
       :description="page.steps.description"
       class="relative overflow-hidden"
@@ -186,6 +187,7 @@ useSeoMeta({
     <USeparator :ui="{ border: 'border-primary/30' }" />
 
     <UPageSection
+      v-if="page.features"
       id="features"
       :description="page.features.description"
       :features="page.features.features"
@@ -240,6 +242,7 @@ useSeoMeta({
     <USeparator :ui="{ border: 'border-primary/30' }" />
 
     <UPageSection
+      v-if="page.testimonials"
       id="testimonials"
       :title="page.testimonials.title"
       :description="page.testimonials.description"
@@ -334,7 +337,7 @@ useSeoMeta({
       </template>
 
       <UPageGrid class="lg:grid-cols-3">
-        <UPageCard v-for="(member, index) in page.team.members" :key="index" :description="member.bio">
+        <UPageCard v-for="(member, index) in page.team.members" :key="index">
           <template #header>
             <NuxtImg v-if="member.image" :src="member.image" :alt="member.name" class="size-16 rounded-full object-cover outline-2 -outline-offset-2 outline-white/20" />
             <div v-else class="size-16 rounded-full outline-2 -outline-offset-2 outline-white/20" />
@@ -343,6 +346,10 @@ useSeoMeta({
           <template #title>
             <p class="text-sm text-muted">{{ member.role }}</p>
             <h3 class="text-lg font-semibold">{{ member.name }}</h3>
+          </template>
+
+          <template #description>
+            <p class="text-sm text-muted">{{ member.bio }}</p>
           </template>
 
           <template #footer>
@@ -365,7 +372,7 @@ useSeoMeta({
       </template>
 
       <UPageGrid class="lg:grid-cols-5">
-        <UPageCard v-for="(member, index) in page.investors.members" :key="index" :description="member.bio">
+        <UPageCard v-for="(member, index) in page.investors.members" :key="index">
           <template #header>
             <NuxtImg :src="member.image" :alt="member.name" class="size-16 rounded-full object-cover outline-2 -outline-offset-2 outline-white/20" />
           </template>
@@ -373,6 +380,10 @@ useSeoMeta({
           <template #title>
             <p class="text-sm text-muted">{{ member.role }}</p>
             <h3 class="text-lg font-semibold">{{ member.name }}</h3>
+          </template>
+
+          <template #description>
+            <p class="text-sm text-muted">{{ member.bio }}</p>
           </template>
 
           <template #footer>
