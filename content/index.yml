@@ -1,7 +1,7 @@
 seo:
   title: Quiver - AI Inventory Planning for Retail & Wholesale Teams
   description: AI forecasting that helps multi-location retailers and wholesalers prevent stockouts, shrink excess inventory, and improve cash flow.
-title: [AI-powered inventory]{.text-primary}, always in control.
+title: '[AI-powered inventory]{.text-primary}, always in control.'
 description: Quiver gives retailers and wholesalers the foresight to keep bestsellers in stock, trim excess inventory, and unlock cash flow with AI-powered planning.
 hero:
   image: /landing/features/dashboard-forecast.webp
@@ -101,7 +101,7 @@ hero_features:
       description: Unified view across all sales channels, warehouses, and product categories.
       class: border-l border-default pt-4 pl-4
 features:
-  title: Run [proactive]{.text-primary} planning across every channel
+  title: 'Run [proactive]{.text-primary} planning across every channel'
   description: Replace firefighting with clear visibility, confident decisions, and aligned teams.
   features:
     - title: Eliminate stockouts
@@ -135,11 +135,11 @@ features:
       ui:
         leading: bg-accented/50 p-2 rounded-md border border-muted border-dashed
 about:
-  title: Supply chain planning should be [easy]{.text-primary}
+  title: 'Supply chain planning should be [easy]{.text-primary}'
   description: We help product companies replace reactive spreadsheets with smart forecasting and automated planning. No more gut feel decisions or costly surprises.
   content: Many businesses still rely on manual processes to manage inventory—leading to overordering, stockouts, and lost hours. Quiver delivers a purpose-built platform that makes forecasting and inventory management straightforward. We take the guesswork out of supply chain decisions so you keep the right products in stock without tying up cash.
 steps:
-  title: How [Quiver]{.text-primary} works
+  title: 'How [Quiver]{.text-primary} works'
   description: Go live with AI-driven inventory planning in three focused steps.
   items:
     - title: Connect your systems
@@ -159,7 +159,7 @@ steps:
         dark: '/images/dark/track.svg'
 
 testimonials:
-  title: Trusted by leading [businesses]{.text-primary}
+  title: 'Trusted by leading [businesses]{.text-primary}'
   description: See how companies are transforming their inventory planning and achieving better results with our platform.
   items:
     - quote: Quiver has helped us automate and professionalize inventory planning—giving us a clear overview and minimizing the risk of manual mistakes.
@@ -197,7 +197,7 @@ testimonials:
         name: 'Sadie Hardiman'
         description: 'US Planning Manager - Contour Design'
 team:
-  title: Meet the [team]{.text-primary}
+  title: 'Meet the [team]{.text-primary}'
   description: The people behind Quiver, dedicated to transforming supply chain planning.
   members:
     - name: Morten Sønderlyng
@@ -229,7 +229,7 @@ team:
       bio: Back-end developer specialized in Python with experience from supply chain startups and building inventory management systems from scratch.
       linkedin: https://linkedin.com/in/cetraerup/
 investors:
-  title: Backed by a strong [investor group]{.text-primary}
+  title: 'Backed by a strong [investor group]{.text-primary}'
   description: Supported by experienced investors and advisors who believe in our mission.
   members:
     - name: Michael Overgaard
