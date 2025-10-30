@@ -1,7 +1,8 @@
 {
   "name": "nuxt-ui-template-landing",
-  "private": true,
   "type": "module",
+  "private": true,
+  "packageManager": "pnpm@10.19.0",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -21,9 +22,11 @@
     "nuxt": "^4.2.0"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^6.1.0",
     "@iconify-json/ph": "^1.2.2",
     "@nuxt/eslint": "^1.9.0",
     "eslint": "^9.38.0",
+    "eslint-plugin-format": "^1.0.2",
     "js-yaml": "^4.1.0",
     "sharp-cli": "^5.2.0",
     "svgo": "^4.0.0",
@@ -32,6 +35,5 @@
   },
   "resolutions": {
     "unimport": "4.1.1"
-  },
-  "packageManager": "pnpm@10.19.0"
+  }
 }

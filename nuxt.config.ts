@@ -4,24 +4,24 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxt/ui',
-    '@nuxt/content'
+    '@nuxt/content',
   ],
 
   devtools: {
-    enabled: true
+    enabled: true,
   },
 
   css: ['~/assets/css/main.css'],
 
   colorMode: {
     preference: 'light',
-    fallback: 'light'
+    fallback: 'light',
   },
 
   mdc: {
     highlight: {
-      noApiRoute: false
-    }
+      noApiRoute: false,
+    },
   },
 
   compatibilityDate: '2025-01-15',
@@ -30,16 +30,13 @@ export default defineNuxtConfig({
     preset: 'vercel',
     prerender: {
       crawlLinks: false,
-      routes: []
-    }
+      routes: [],
+    },
   },
 
   eslint: {
     config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
-  }
+      standalone: false,
+    },
+  },
 })

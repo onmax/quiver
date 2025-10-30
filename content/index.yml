@@ -88,8 +88,8 @@ hero_features:
   title: '[AI-powered]{.text-primary} demand forecasting'
   description: Stop guessing what to order. Get precise predictions based on your unique sales patterns, seasonality, and market trends.
   images:
-    mobile: '/images/macbook-mobile.svg'
-    desktop: '/images/macbook.svg'
+    mobile: /images/macbook-mobile.svg
+    desktop: /images/macbook.svg
   features:
     - title: Predict future demand
       description: Advanced ML models analyze historical data to forecast demand with unprecedented accuracy.
@@ -145,18 +145,18 @@ steps:
     - title: Connect your systems
       description: Integrate ERPs, ecommerce, and data sources in minutes to stream real-time signals into Quiver.
       image:
-        light: '/images/light/connect.svg'
-        dark: '/images/dark/connect.svg'
+        light: /images/light/connect.svg
+        dark: /images/dark/connect.svg
     - title: Get AI-powered forecasts
       description: Advanced models digest sales patterns, seasonality, and trends to project demand with precision.
       image:
-        light: '/images/light/optimize.svg'
-        dark: '/images/dark/optimize.svg'
+        light: /images/light/optimize.svg
+        dark: /images/dark/optimize.svg
     - title: Optimize & order smarter
       description: Receive automated order suggestions that balance stock levels, reduce waste, and prevent stockouts.
       image:
-        light: '/images/light/track.svg'
-        dark: '/images/dark/track.svg'
+        light: /images/light/track.svg
+        dark: /images/dark/track.svg
 
 testimonials:
   title: 'Trusted by leading [businesses]{.text-primary}'
@@ -164,38 +164,38 @@ testimonials:
   items:
     - quote: Quiver has helped us automate and professionalize inventory planning—giving us a clear overview and minimizing the risk of manual mistakes.
       user:
-        name: 'Frida Vestergaard'
-        description: 'Supply Chain Manager - Moonboon'
+        name: Frida Vestergaard
+        description: Supply Chain Manager - Moonboon
         avatar:
-          src: '/landing/testimonials/frida-vestergaard.jpg'
+          src: /landing/testimonials/frida-vestergaard.jpg
     - quote: The platform is intuitive. Quiver streamlined our planning, saved valuable time, and reduced costly manual errors. We've cut stockouts and overstock situations.
       user:
-        name: 'Jacob Vesterled'
-        description: 'COO - Moonboon'
+        name: Jacob Vesterled
+        description: COO - Moonboon
         avatar:
-          src: '/landing/testimonials/jacob-vesterled.jpg'
+          src: /landing/testimonials/jacob-vesterled.jpg
     - quote: It's been a pleasure working with Quiver. They are professional and dedicated to delivering a product that solves our planning challenges.
       user:
-        name: 'Stinne Frøslev'
-        description: 'Head of Operations - Sif Jakobs'
+        name: Stinne Frøslev
+        description: Head of Operations - Sif Jakobs
         avatar:
-          src: '/landing/testimonials/stinne-froslev.jpg'
+          src: /landing/testimonials/stinne-froslev.jpg
     - quote: With Quiver we now have a consolidated overview of our supply chain, from purchasing to sales, including the inputs we need for forecasting.
       user:
-        name: 'Marianne Iversen'
-        description: 'CFO - Contour Design'
+        name: Marianne Iversen
+        description: CFO - Contour Design
         avatar:
-          src: '/landing/testimonials/marianne-iversen.jpg'
+          src: /landing/testimonials/marianne-iversen.jpg
     - quote: Quiver helped us improve reorder points and safety stock levels, creating healthier inventory.
       user:
-        name: 'Robin Villadsen'
-        description: 'Production Manager - BIBS'
+        name: Robin Villadsen
+        description: Production Manager - BIBS
         avatar:
-          src: '/landing/testimonials/robin-villadsen.png'
+          src: /landing/testimonials/robin-villadsen.png
     - quote: Quiver has been essential in our inventory planning. The ability to add custom rules or special requirements for product lines is a huge help.
       user:
-        name: 'Sadie Hardiman'
-        description: 'US Planning Manager - Contour Design'
+        name: Sadie Hardiman
+        description: US Planning Manager - Contour Design
 team:
   title: 'Meet the [team]{.text-primary}'
   description: The people behind Quiver, dedicated to transforming supply chain planning.

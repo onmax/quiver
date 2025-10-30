@@ -2,20 +2,20 @@
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    { key: 'theme-color', name: 'theme-color', content: 'white' }
+    { key: 'theme-color', name: 'theme-color', content: 'white' },
   ],
   link: [
-    { rel: 'icon', href: '/logo-color.svg' }
+    { rel: 'icon', href: '/logo-color.svg' },
   ],
   htmlAttrs: {
-    lang: 'en'
-  }
+    lang: 'en',
+  },
 })
 
 useSeoMeta({
   ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/landing-light.png',
   twitterImage: 'https://ui.nuxt.com/assets/templates/nuxt/landing-light.png',
-  twitterCard: 'summary_large_image'
+  twitterCard: 'summary_large_image',
 })
 </script>
 

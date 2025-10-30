@@ -7,6 +7,7 @@ AI-powered inventory planning platform landing page built with [Nuxt UI](https:/
 ## Content Structure
 
 All page content is managed through `content/index.yml` with schema validation in `content.config.ts`. Sections include:
+
 - Hero & integrations
 - Benefits cards
 - Features & feature tabs

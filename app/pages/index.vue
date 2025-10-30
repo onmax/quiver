@@ -8,7 +8,7 @@ const featureTabs = [
   { label: 'Forecasting & demand planning', value: 'forecasting', image: '/landing/features/feature-forecasting.webp', content: 'Leverage AI-powered forecasting models to predict demand with unprecedented accuracy. Turn historical data into actionable insights.' },
   { label: 'Inventory optimization & ordering', value: 'inventory', image: '/landing/features/feature-inventory.webp', content: 'Balance stock levels automatically with intelligent order suggestions. Never run out of stock or tie up cash in excess inventory.' },
   { label: 'Enrich historical and future data', value: 'enrich', image: '/landing/features/feature-enrich-data.webp', content: 'Integrate seasonality, promotions, and market trends seamlessly. Let the system handle routine planning while you focus on strategy.' },
-  { label: 'One source for effective planning', value: 'source', image: '/landing/features/feature-one-source.webp', content: 'Unify Sales, Operations, and Finance with a single source of truth. Break down silos and make aligned decisions across teams.' }
+  { label: 'One source for effective planning', value: 'source', image: '/landing/features/feature-one-source.webp', content: 'Unify Sales, Operations, and Finance with a single source of truth. Break down silos and make aligned decisions across teams.' },
 ]
 
 const selectedTab = ref('forecasting')
@@ -18,7 +18,7 @@ useSeoMeta({
   title: page.value.seo?.title || page.value.title,
   ogTitle: page.value.seo?.title || page.value.title,
   description: page.value.seo?.description || page.value.description,
-  ogDescription: page.value.seo?.description || page.value.description
+  ogDescription: page.value.seo?.description || page.value.description,
 })
 </script>
 
@@ -39,7 +39,7 @@ useSeoMeta({
       orientation="horizontal"
       :ui="{
         container: 'md:pt-18 lg:pt-20 pb-8 sm:pb-10',
-        body: 'mt-4'
+        body: 'mt-4',
       }"
     >
       <template #top>
@@ -113,7 +113,6 @@ useSeoMeta({
       <UPageGrid>
         <UPageCard
           v-for="(card, index) in page.benefits.cards"
-          v-if="card"
           :key="index"
           class="group hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
           :ui="{ container: 'p-6', root: 'border-2 border-muted hover:border-primary/30' }"
@@ -167,7 +166,6 @@ useSeoMeta({
         <div class="space-y-6">
           <UPageCard
             v-for="(feature, index) in page.hero_features.features"
-            v-if="feature"
             :key="index"
             :title="feature.title"
             :description="feature.description"
@@ -204,7 +202,6 @@ useSeoMeta({
       <template #features>
         <UPageCard
           v-for="(step, index) in page.steps.items"
-          v-if="step"
           :key="index"
           class="group"
           :ui="{ container: 'p-4 sm:p-4', title: 'flex items-center gap-1' }"
@@ -250,9 +247,8 @@ useSeoMeta({
             <button
               v-for="tab in featureTabs"
               :key="tab.value"
-              :class="[
-                'w-full text-left px-6 py-4 rounded-lg transition-colors',
-                selectedTab === tab.value ? 'bg-primary/10 text-primary' : 'hover:bg-muted/50'
+              class="w-full text-left px-6 py-4 rounded-lg transition-colors" :class="[
+                selectedTab === tab.value ? 'bg-primary/10 text-primary' : 'hover:bg-muted/50',
               ]"
               @click="selectedTab = tab.value"
             >
@@ -283,7 +279,7 @@ useSeoMeta({
       :features="page.features.features"
       :ui="{
         title: 'text-left @container relative flex',
-        description: 'text-left'
+        description: 'text-left',
       }"
       class="relative overflow-hidden"
     >
@@ -363,7 +359,6 @@ useSeoMeta({
         <UPageColumns class="xl:columns-3">
           <UPageCard
             v-for="(testimonial, index) in page.testimonials.items"
-            v-if="testimonial"
             :key="index"
             variant="subtle"
             :description="testimonial.quote"
@@ -451,7 +446,6 @@ useSeoMeta({
       <UPageGrid class="lg:grid-cols-3">
         <UPageCard
           v-for="(member, index) in page.team.members"
-          v-if="member"
           :key="index"
         >
           <template #header>
@@ -512,7 +506,6 @@ useSeoMeta({
       <UPageGrid class="lg:grid-cols-5">
         <UPageCard
           v-for="(member, index) in page.investors.members"
-          v-if="member"
           :key="index"
         >
           <template #header>
