@@ -113,6 +113,7 @@ useSeoMeta({
       <UPageGrid>
         <UPageCard
           v-for="(card, index) in page.benefits.cards"
+          v-if="card"
           :key="index"
           class="group hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
           :ui="{ container: 'p-6', root: 'border-2 border-muted hover:border-primary/30' }"
@@ -166,6 +167,7 @@ useSeoMeta({
         <div class="space-y-6">
           <UPageCard
             v-for="(feature, index) in page.hero_features.features"
+            v-if="feature"
             :key="index"
             :title="feature.title"
             :description="feature.description"
@@ -202,6 +204,7 @@ useSeoMeta({
       <template #features>
         <UPageCard
           v-for="(step, index) in page.steps.items"
+          v-if="step"
           :key="index"
           class="group"
           :ui="{ container: 'p-4 sm:p-4', title: 'flex items-center gap-1' }"
@@ -360,6 +363,7 @@ useSeoMeta({
         <UPageColumns class="xl:columns-3">
           <UPageCard
             v-for="(testimonial, index) in page.testimonials.items"
+            v-if="testimonial"
             :key="index"
             variant="subtle"
             :description="testimonial.quote"
@@ -379,6 +383,7 @@ useSeoMeta({
     <USeparator :ui="{ border: 'border-primary/30' }" />
 
     <UPageCTA
+      v-if="page.cta"
       v-bind="page.cta"
       variant="naked"
       class="overflow-hidden @container"
@@ -446,6 +451,7 @@ useSeoMeta({
       <UPageGrid class="lg:grid-cols-3">
         <UPageCard
           v-for="(member, index) in page.team.members"
+          v-if="member"
           :key="index"
         >
           <template #header>
@@ -506,6 +512,7 @@ useSeoMeta({
       <UPageGrid class="lg:grid-cols-5">
         <UPageCard
           v-for="(member, index) in page.investors.members"
+          v-if="member"
           :key="index"
         >
           <template #header>
