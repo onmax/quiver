@@ -100,7 +100,7 @@ useSeoMeta({
       </template>
 
       <NuxtImg
-        v-if="page.hero.image"
+        v-if="page.hero?.image"
         :src="page.hero.image"
         :alt="page.title"
       />
@@ -172,13 +172,12 @@ useSeoMeta({
             :ui="{ root: feature.class || '' }"
           />
         </div>
-        <div v-if="page.hero_features.images">
-          <NuxtImg
-            :src="page.hero_features.images.desktop || page.hero_features.images.mobile"
-            alt="Platform preview"
-            class="w-full"
-          />
-        </div>
+        <NuxtImg
+          v-if="page.hero_features.images?.desktop || page.hero_features.images?.mobile"
+          :src="page.hero_features.images.desktop || page.hero_features.images.mobile"
+          alt="Platform preview"
+          class="w-full"
+        />
       </div>
     </UPageSection>
 
@@ -511,6 +510,7 @@ useSeoMeta({
         >
           <template #header>
             <NuxtImg
+              v-if="member.image"
               :src="member.image"
               :alt="member.name"
               class="size-16 rounded-full object-cover outline-2 -outline-offset-2 outline-white/20"
