@@ -2,43 +2,53 @@
 // Generate data based on today's date
 const today = new Date()
 
-// Historical data - 12 months back
-const historicalData = Array.from({ length: 12 }, (_, i) => {
+// Historical data - 12 months back to today
+const historicalData = Array.from({ length: 13 }, (_, i) => {
   const date = new Date(today)
-  date.setMonth(date.getMonth() - (11 - i))
+  date.setMonth(date.getMonth() - (12 - i))
   const period = date.toISOString().slice(0, 7)
   const value = Math.floor(130 + Math.random() * 400 + i * 20)
   return { period, value }
 })
 
-// Forecast data - 6 months forward
-const forecastData = Array.from({ length: 6 }, (_, i) => {
+// Forecast data - starts 6 months ago and goes 6 months into future
+const forecastData = Array.from({ length: 13 }, (_, i) => {
   const date = new Date(today)
-  date.setMonth(date.getMonth() + i + 1)
+  date.setMonth(date.getMonth() - (6 - i))
   const period = date.toISOString().slice(0, 7)
   const value = Math.floor(350 + Math.random() * 200)
   return { period, value }
 })
 
-// Combine for chart display
-const chartData = [
-  ...historicalData.map(d => ({ 
-    period: d.period, 
-    'Historical Sales': d.value,
-    'Forecast': null 
-  })),
-  ...forecastData.map(d => ({ 
-    period: d.period, 
-    'Historical Sales': null,
-    'Forecast': d.value 
-  }))
-]
+// Create combined data structure for chart
+// Each period should have historical (if <= today) and forecast values
+const allPeriods = new Set([
+  ...historicalData.map(d => d.period),
+  ...forecastData.map(d => d.period)
+])
+
+const chartData = Array.from(allPeriods).sort().map(period => {
+  const historical = historicalData.find(d => d.period === period)
+  const forecast = forecastData.find(d => d.period === period)
+  
+  return {
+    period,
+    'Historical Sales': historical ? historical.value : null,
+    'Forecast': forecast ? forecast.value : null
+  }
+})
 
 // Categories for different line colors
 const categories = {
   'Historical Sales': { name: 'Historical Sales', color: 'var(--ui-primary)' },
   'Forecast': { name: 'Forecast', color: 'var(--color-amber-400)' }
 }
+
+// Make forecast line dashed
+const lineDashArray = [
+  [0, 0], // Historical - solid
+  [5, 4]  // Forecast - dashed
+]
 
 const xFormatter = (i: number) => {
   const item = chartData[i]
@@ -75,11 +85,19 @@ const tableTotals = Object.fromEntries(
         <div class="flex items-start justify-between">
           <div class="space-y-2">
             <p class="text-xs uppercase tracking-wider text-muted font-medium">Sales Overview</p>
-            <div class="font-semibold text-3xl text-highlighted tabular-nums">Historical & Forecast</div>
+            <div class="font-semibold text-3xl text-highlighted tabular-nums">Historical vs Forecast</div>
           </div>
         </div>
 
-        <LineChart :data="chartData" :height="300" :categories="categories" :x-formatter="xFormatter" :x-grid-line="true" :curve-type="CurveType.MonotoneX" />
+        <LineChart 
+          :data="chartData" 
+          :height="300" 
+          :categories="categories" 
+          :x-formatter="xFormatter" 
+          :x-grid-line="true" 
+          :curve-type="CurveType.MonotoneX"
+          :line-dash-array="lineDashArray"
+        />
 
         <div class="flex justify-center gap-6">
           <template v-for="(cat, catKey) in categories" :key="catKey">
