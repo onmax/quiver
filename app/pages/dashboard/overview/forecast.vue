@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // Generate data based on today's date
 const today = new Date()
+const todayPeriod = today.toISOString().slice(0, 7)
 
 // Historical data - 12 months back to today
 const historicalData = Array.from({ length: 13 }, (_, i) => {
@@ -11,30 +12,32 @@ const historicalData = Array.from({ length: 13 }, (_, i) => {
   return { period, value }
 })
 
-// Forecast data - starts 6 months ago and goes 6 months into future
+// Forecast data - starts 6 months ago, goes 6 months forward
 const forecastData = Array.from({ length: 13 }, (_, i) => {
   const date = new Date(today)
   date.setMonth(date.getMonth() - (6 - i))
   const period = date.toISOString().slice(0, 7)
-  const value = Math.floor(350 + Math.random() * 200)
+  // Add some variation to historical values for forecast
+  const historicalMatch = historicalData.find(d => d.period === period)
+  const value = historicalMatch ? historicalMatch.value + Math.floor(Math.random() * 100 - 50) : Math.floor(350 + Math.random() * 200)
   return { period, value }
 })
 
-// Create combined data structure for chart
-// Each period should have historical (if <= today) and forecast values
-const allPeriods = new Set([
+// Collect all unique periods
+const allPeriods = Array.from(new Set([
   ...historicalData.map(d => d.period),
   ...forecastData.map(d => d.period)
-])
+])).sort()
 
-const chartData = Array.from(allPeriods).sort().map(period => {
+// Build chart data with separate datasets for each line
+const chartData = allPeriods.map(period => {
   const historical = historicalData.find(d => d.period === period)
   const forecast = forecastData.find(d => d.period === period)
   
   return {
     period,
-    'Historical Sales': historical ? historical.value : null,
-    'Forecast': forecast ? forecast.value : null
+    'Historical Sales': historical?.value,
+    'Forecast': forecast?.value
   }
 })
 
@@ -89,24 +92,17 @@ const tableTotals = Object.fromEntries(
           </div>
         </div>
 
-        <LineChart 
-          :data="chartData" 
-          :height="300" 
-          :categories="categories" 
-          :x-formatter="xFormatter" 
-          :x-grid-line="true" 
+        <LineChart
+          :data="chartData"
+          :height="300"
+          :categories="categories"
+          :x-formatter="xFormatter"
+          :x-grid-line="true"
           :curve-type="CurveType.MonotoneX"
           :line-dash-array="lineDashArray"
+          :connect-nulls="false"
+          :hide-legend="false"
         />
-
-        <div class="flex justify-center gap-6">
-          <template v-for="(cat, catKey) in categories" :key="catKey">
-            <div class="flex items-center gap-2">
-              <span class="rounded-full w-2 h-2 inline-block" :style="{ background: cat.color }" />
-              <span class="text-muted text-xs">{{ cat.name }}</span>
-            </div>
-          </template>
-        </div>
       </div>
     </UCard>
 
