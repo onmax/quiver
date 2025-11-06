@@ -12,14 +12,16 @@ const historicalData = Array.from({ length: 13 }, (_, i) => {
   return { period, value }
 })
 
-// Forecast data - starts 6 months ago, goes 6 months forward
-const forecastData = Array.from({ length: 13 }, (_, i) => {
+// Forecast data - starts same as historical (12 months ago), goes 6 months forward
+const forecastData = Array.from({ length: 19 }, (_, i) => {
   const date = new Date(today)
-  date.setMonth(date.getMonth() - (6 - i))
+  date.setMonth(date.getMonth() - (12 - i))
   const period = date.toISOString().slice(0, 7)
-  // Add some variation to historical values for forecast
+  // Add some variation to historical values for forecast in past, random for future
   const historicalMatch = historicalData.find(d => d.period === period)
-  const value = historicalMatch ? historicalMatch.value + Math.floor(Math.random() * 100 - 50) : Math.floor(350 + Math.random() * 200)
+  const value = historicalMatch
+    ? historicalMatch.value + Math.floor(Math.random() * 100 - 50)
+    : Math.floor(350 + Math.random() * 200)
   return { period, value }
 })
 
