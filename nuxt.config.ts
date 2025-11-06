@@ -40,4 +40,14 @@ export default defineNuxtConfig({
       standalone: false,
     },
   },
+
+  build: {
+    transpile: ['nuxt-charts']
+  },
+
+  vite: {
+    optimizeDeps: {
+      include: ['to-px', 'd3-scale', 'd3-shape', 'd3-array']
+    }
+  },
 })
