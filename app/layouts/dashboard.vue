@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import type { NavigationMenuItem } from '@nuxt/ui'
+import type { NavigationMenuItem } from '~/components/SideNav/types'
 
-const links = ref<NavigationMenuItem[][]>([
-  [
-    {
+const links = ref<NavigationMenuItem[]>([
+  {
       icon: 'i-ph-squares-four-duotone',
       label: 'Overview',
       open: true,
@@ -57,7 +56,6 @@ const links = ref<NavigationMenuItem[][]>([
         { to: '/dashboard/developer/api-docs', icon: 'i-ph-book-open-duotone', label: 'API Documentation' }
       ]
     }
-  ]
 ])
 </script>
 
@@ -72,7 +70,7 @@ const links = ref<NavigationMenuItem[][]>([
       </template>
 
       <template #default="{ collapsed }">
-        <UNavigationMenu :items="links[0]!" :collapsed="collapsed" orientation="vertical" />
+        <SideNav :items="links" :collapsed="collapsed" />
       </template>
     </UDashboardSidebar>
 
