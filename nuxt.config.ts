@@ -19,6 +19,10 @@ export default defineNuxtConfig({
     fallback: 'light',
   },
 
+  future: {
+    compatibilityVersion: 4
+  },
+
   mdc: {
     highlight: {
       noApiRoute: false,
@@ -39,15 +43,5 @@ export default defineNuxtConfig({
     config: {
       standalone: false,
     },
-  },
-
-  build: {
-    transpile: ['nuxt-charts']
-  },
-
-  vite: {
-    optimizeDeps: {
-      include: ['to-px', 'd3-scale', 'd3-shape', 'd3-array']
-    }
   },
 })
