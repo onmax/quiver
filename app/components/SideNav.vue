@@ -29,12 +29,6 @@ const isItemOpen = (index: number) => {
 <template>
   <div>
     <div class="space-y-4">
-      <NuxtLink to="/" class="mt-2 block">
-        <UButton :ui="{ leadingIcon: 'size-4 mr-1' }" class="w-full cursor-pointer" icon="i-ph-house-duotone" variant="link" active-variant="soft" :active="route.path === '/'" :label="collapsed ? '' : 'Home'" />
-      </NuxtLink>
-
-      <hr class="bg-(--ui-border) border-default">
-
       <div v-for="(item, itemKey) in props.items" :key="itemKey" class="border-b border-default" :class="collapsed ? 'space-y-2' : ' px-2'">
         <UButton v-if="!collapsed" variant="ghost" color="neutral" class="w-full justify-between uppercase text-xs font-medium tracking-wider mb-2 px-2" @click="toggleItem(itemKey)">
           <template #leading>

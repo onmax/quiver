@@ -31,7 +31,7 @@ function onTabChange(value: string) {
     <template #body>
       <div class="space-y-6">
         <div class="flex items-center justify-between">
-          <UTabs :model-value="activeTab" class="max-w-2xl" :items="tabs" color="neutral" :content="false" @update:model-value="onTabChange" />
+          <UTabs :model-value="activeTab" :items="tabs" color="neutral" :content="false" @update:model-value="onTabChange" />
         </div>
         <NuxtPage />
       </div>
