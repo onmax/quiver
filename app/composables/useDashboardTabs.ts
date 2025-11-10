@@ -39,7 +39,8 @@ export function useDashboardTabs() {
 
     return group.children.map(child => ({
       label: child.label,
-      to: child.to
+      to: child.to,
+      value: child.to
     }))
   }
 
